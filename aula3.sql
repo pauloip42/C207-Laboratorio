@@ -47,10 +47,17 @@ create table if not exists usuario(
   #SELECT com funções prontas
   SELECT avg(totalCompra) FROM Cliente;
   SELECT max(totalCompra) FROM Cliente;
+  SELECT nome FROM Cliente WHERE totalCompra = (SELECT max(totalCompra) FROM Cliente);
   
   #SELECT com filtro para campos de texto
   SELECT * FROM Cliente WHERE nome LIKE 'Jo____%';
   SELECT * FROM Cliente WHERE nome LIKE '%a%';
+  
+  #SELECT com limite de dados
+  SELECT nome, telefone FROM Cliente LIMIT 3;
+  
+  #SELECT: busca sem repetições
+  SELECT distinct cidade FROM Cliente;
   
   
   
